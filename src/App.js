@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import Planes from './components/Planes';
+import Encabezado from './components/Encabezado';
+import PieDePagina from './components/PieDePagina';
+import EncabezadoPrincipal from './components/EncabezadoPrincipal'; // Importa el encabezado principal
+import AcercaDeMi from './components/AcercaDeMi';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './theme';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Encabezado />
+        <div style={{ textAlign: 'center' }}>
+          <EncabezadoPrincipal /> {/* Centra el encabezado principal */}
+        </div>
+        <main style={{ textAlign: 'center' }}>
+          <Planes />
+          <AcercaDeMi /> {/* Agrega el componente AcercaDeMi aquí */}
+        </main>
+        <PieDePagina />
+      </div>
+    </ThemeProvider>
   );
 }
 
