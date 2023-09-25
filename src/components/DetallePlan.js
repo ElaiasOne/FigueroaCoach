@@ -18,9 +18,9 @@ const renderVentajas = (ventajas, showCheckIconIndices) => {
         <li key={index}>
           {showCheckIconIndices.includes(index) ? (
             /* Cambia el color a verde */
-            <CheckCircleIcon sx={{ color: 'success' }} />
+            <CheckCircleIcon sx={{ color: 'green' }} />
           ) : (
-            <CancelIcon sx={{ color: 'error' }} />
+            <CancelIcon sx={{ color: 'red' }} />
           )}{' '}
           {ventaja}
         </li>
@@ -31,7 +31,7 @@ const renderVentajas = (ventajas, showCheckIconIndices) => {
 
 const DetallePlan = ({ titulo, descripcion, precio, ventajas, showCheckIconIndices }) => {
   return (
-    <Card style={{ marginBottom: '20px' }}>
+    <Card style={{ marginBottom: '20px', border: '1px solid #000' }}>
       <CardContent>
         <Typography variant="h5">{titulo}</Typography>
         <Typography variant="body2">{descripcion}</Typography>
